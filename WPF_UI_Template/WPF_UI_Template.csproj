@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Actor.png" />
+    <None Remove="Resources\AddDataSource.png" />
+    <None Remove="Resources\Close.png" />
+    <None Remove="Resources\DatabaseReport.png" />
+    <None Remove="Resources\DocumentGroup.png" />
+    <None Remove="Resources\FolderOpened.png" />
+    <None Remove="Resources\InfoTipInline.png" />
+    <None Remove="Resources\Monitor.png" />
+    <None Remove="Resources\NetworkNDISDriver.png" />
+    <None Remove="Resources\NewWebMethodAction.png" />
+    <None Remove="Resources\QuestionMark.png" />
+    <None Remove="Resources\SettingsGroup.png" />
+    <None Remove="Resources\Statistics.png" />
+    <None Remove="Resources\StatisticsWarning.png" />
+    <None Remove="Resources\StatusInformation.png" />
+    <None Remove="Resources\StatusInformation2.png" />
+    <None Remove="Resources\StatusInformationOutlineNoColor.png" />
+    <None Remove="Resources\StatusOK.png" />
+    <None Remove="Resources\ToolstripAlignment.png" />
+    <None Remove="Resources\User.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\AddDataSource.png" />
+    <Resource Include="Resources\Close.png" />
+    <Resource Include="Resources\DatabaseReport.png" />
+    <Resource Include="Resources\Monitor.png" />
+    <Resource Include="Resources\NetworkNDISDriver.png" />
+    <Resource Include="Resources\NewWebMethodAction.png" />
+    <Resource Include="Resources\QuestionMark.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Actor.png" />
+    <Resource Include="Resources\DocumentGroup.png" />
+    <Resource Include="Resources\FolderOpened.png" />
+    <Resource Include="Resources\InfoTipInline.png" />
+    <Resource Include="Resources\SettingsGroup.png" />
+    <Resource Include="Resources\Statistics.png" />
+    <Resource Include="Resources\StatisticsWarning.png" />
+    <Resource Include="Resources\StatusInformation.png" />
+    <Resource Include="Resources\StatusInformation2.png" />
+    <Resource Include="Resources\StatusInformationOutlineNoColor.png" />
+    <Resource Include="Resources\StatusOK.png" />
+    <Resource Include="Resources\ToolstripAlignment.png" />
+    <Resource Include="Resources\User.png" />
+  </ItemGroup>
+
+</Project>

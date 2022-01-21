@@ -1,0 +1,109 @@
+﻿<Window x:Class="WPF_UI_Template.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_UI_Template"
+        mc:Ignorable="d"
+        Name="myMainWindow"
+        Title="MainWindow" Height="650" Width="1000" MinWidth="800" MinHeight="400">
+    <Window.Resources>
+        <local:ImageConverter x:Key="ImageConverter" />
+        <Style x:Key="StackPanelHoverStyle" TargetType="{x:Type StackPanel}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#bee7fc"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="LeftAreaStackPanelStyle" TargetType="{x:Type StackPanel}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF86C1DF"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="LeftAreaImageStyle" TargetType="{x:Type Image}">
+            <Setter Property="HorizontalAlignment" Value="left"/>
+            <Setter Property="Width" Value="40"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.5"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="LeftAreaTextStyle" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.5"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    
+    
+    <Grid>
+        <Grid.Resources>
+            <ImageBrush x:Key="AddButtonImageBrush" ImageSource="/HNWpfClient;component/Resources/cogwheel.png" Stretch="UniformToFill"/>
+        </Grid.Resources>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" MinWidth="50" MaxWidth="200"/>
+            <ColumnDefinition Width="2" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <Grid Name="GridLeftTop" Background="#FF5F8AA0" Grid.Row="0">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource LeftAreaStackPanelStyle}">
+                        <Image Margin="5,10,0,0"         Style="{StaticResource LeftAreaImageStyle}" Source="Resources/DatabaseReport.png"        MouseDown="SelectPage1" ToolTip="Jobs"></Image>
+                        <Label Content="Group1"          Style="{StaticResource LeftAreaTextStyle}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource LeftAreaStackPanelStyle}">
+                        <Image Margin="5,20,0,0"         Style="{StaticResource LeftAreaImageStyle}" Source="Resources/DocumentGroup.png"         MouseDown="SelectPage2" ToolTip="Documents"></Image>
+                        <Label Content="Group2"          Style="{StaticResource LeftAreaTextStyle}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource LeftAreaStackPanelStyle}">
+                        <Image Margin="5,20,0,0"         Style="{StaticResource LeftAreaImageStyle}" Source="Resources/StatisticsWarning.png"     MouseDown="SelectPage3" ToolTip="Reports" ></Image>
+                        <Label Content="Group3"          Style="{StaticResource LeftAreaTextStyle}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource LeftAreaStackPanelStyle}">
+                        <Image Margin="5,20,0,0"         Style="{StaticResource LeftAreaImageStyle}" Source="Resources/NewWebMethodAction.png"    MouseDown="SelectPage4" ToolTip="Connections"></Image>
+                        <Label Content="Group4"          Style="{StaticResource LeftAreaTextStyle}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource LeftAreaStackPanelStyle}">
+                        <Image Margin="5,20,0,0"         Style="{StaticResource LeftAreaImageStyle}" Source="Resources/SettingsGroup.png"         MouseDown="SelectPage5" ToolTip="Settings"></Image>
+                        <Label Content="Group5"          Style="{StaticResource LeftAreaTextStyle}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+            <Grid Name="GridLeftBottom" Background="#FF5F8AA0" Grid.Row="1">
+                <Image Source="Resources/StatusInformation2.png" Style="{StaticResource LeftAreaImageStyle}" Margin="5,0,0,0"></Image>
+            </Grid>
+        </Grid>
+
+
+        <GridSplitter Grid.Column="1" Width="2" HorizontalAlignment="Stretch"/>
+
+
+        <Grid Grid.Column="2" Background="#FFE3F2FF">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Frame Name="MiddleNagivationFrame" NavigationUIVisibility="Hidden"/>
+            </ScrollViewer>
+        </Grid>
+
+    </Grid>
+</Window>
